@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
         <title>Calculator</title>
         <link href="../calculator-project/style.css" rel="stylesheet"/>
         <link rel="icon" href="favicon.ico"/>
@@ -19,29 +19,30 @@
 
             <div class="buttons">
                 <ul class="button-list">
-                    <li><div class="button-shadow"><button class="button" id="AC">AC</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="neg">+/-</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="per">%</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="divi">/</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="seven">7</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="eight">8</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="nine">9</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="mult">X</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="four">4</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="five">5</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="six">6</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="minus">-</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="one">1</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="two">2</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="three">3</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="plus">+</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="zero">0</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="decimal">.</button></div></li>
-                    <li><div class="button-shadow"><button class="button" id="equals">=</button></div></li>
+                    <li><div class="button-shadow"><button class="function" data-key="AC" id="AC">AC</button></div></li>
+                    <li><div class="button-shadow"><button class="function" data-key="+/-" id="neg">+/-</button></div></li>
+                    <li><div class="button-shadow"><button class="operation" data-key="%" id="per">%</button></div></li>
+                    <li><div class="button-shadow"><button class="operation" data-key="/" id="divide">/</button></div></li>
+                    <li><div class="button-shadow"><button class="num" data-key="7" id="7">7</button></div></li>
+                    <li><div class="button-shadow"><button class="num" data-key="8" id="8">8</button></div></li>
+                    <li><div class="button-shadow"><button class="num" data-key="9" id="9">9</button></div></li>
+                    <li><div class="button-shadow"><button class="operation" data-key="X" id="mult">X</button></div></li>
+                    <li><div class="button-shadow"><button class="num" data-key="4" id="4">4</button></div></li>
+                    <li><div class="button-shadow"><button class="num" data-key="5" id="5">5</button></div></li>
+                    <li><div class="button-shadow"><button class="num" data-key="6" id="6">6</button></div></li>
+                    <li><div class="button-shadow"><button class="operation" data-key="-" id="minus">-</button></div></li>
+                    <li><div class="button-shadow"><button class="num" data-key="1" id="1">1</button></div></li>
+                    <li><div class="button-shadow"><button class="num" data-key="2" id="2">2</button></div></li>
+                    <li><div class="button-shadow"><button class="num" data-key="3" id="3">3</button></div></li>
+                    <li><div class="button-shadow"><button class="operation" data-key="+" id="plus">+</button></div></li>
+                    <li><div class="button-shadow" id="zero-shadow"><button class="num" data-key="0" id="zero">0</button></div></li>
+                    <li><div class="button-shadow"><button class="operation" data-key="." id="decimal">.</button></div></li>
+                    <li><div class="button-shadow"><button class="operation" data-key="=" id="equals">=</button></div></li>
                 </ul>
             </div>
 
 
         </div>
+        <script src="../calculator-project/function.js"></script>
     </body>
 </html>

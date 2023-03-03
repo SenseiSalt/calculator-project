@@ -43,7 +43,7 @@ body {
 .buttons {
     width: 80%;
     align-items: center;
-    margin-left: 40px;
+    margin-left: 35px;
     margin-top: 0px;
 
 }
@@ -54,7 +54,40 @@ body {
 
 }
 
-.button {
+#zero-shadow {
+    border-radius: 30px;
+
+
+
+}
+
+
+.function {
+    background-color: #c3edbf;
+
+
+}
+.operation {
+    background-color: #e6c8f3;
+
+
+
+}
+
+.operation:hover {
+    background-color: #f4e2fc;
+
+
+}
+
+.function:hover {
+    background-color: #d8fad4;
+
+
+}
+
+
+button {
     border: none;
     border-radius: 50%;
     height: 60px;
@@ -76,7 +109,7 @@ ul {
     flex-direction: row;
     flex-wrap: wrap;
     padding: 0px;
-    gap: 2px;
+    gap: 4px;
 
 
 }
@@ -87,14 +120,14 @@ ul {
 
 }
 
-.button:hover {
+button:hover {
     transform: scale(1.05);
     background-color: #cbe2ea;
     color: #F7C8E0;
 
 }
 
-.button:active {
+button:active {
     transform: scale(.95);
 
 }
