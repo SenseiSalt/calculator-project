@@ -89,16 +89,14 @@ function changeSign() {
 
 function operationDecider(e) {
     let operationData = e.target.id;
-    console.log(operationData);
     switch (operationData) {
         case "plus": 
             currentOperator = 'add';
-            console.log(firstNum);
             changeVars();
         break;
 
         case "minus": 
-            currentOperator = 'sutract';
+            currentOperator = 'subtract';
             changeVars();
         break;
 
@@ -127,8 +125,8 @@ function operationDecider(e) {
 //meat of the logic does the actual math
 
 function logic(n1, n2, op) {
-
-    console.log(n1);
+    console.log(op);
+    
 
     floatNum1 = parseFloat(n1);
     floatNum2 = parseFloat(n2);
@@ -138,15 +136,26 @@ function logic(n1, n2, op) {
     
     
     switch (op) {
-        case 'add': result = parseFloat(n1) + parseFloat(n2);
+        case 'add': 
+            result = floatNum1 + floatNum2;
+        break;
+
+        case 'subtract': 
+            result = (floatNum1 - floatNum2);
+        break;
+
+        case 'multiply':
+            result = floatNum1 * floatNum2;
+        break;
+
+        case 'divide': 
+            result = floatNum1 / floatNum2;
+        break;
         
-
-
-
 
     }
     
-    display.innerText = result;
+    round(result);
 
 
 }
@@ -169,5 +178,30 @@ function update() {
 
     }
 
+
+}
+
+// round the answer and return it to screen
+
+function round(toBeRounded) {
+    firstNum = toBeRounded;
+    
+    finalResult = Number((toBeRounded).toFixed(9));
+    
+    if (finalResult < 99999999999 && finalResult > .00000000001) {
+        display.innerText = finalResult;
+    }
+
+    else if (finalResult >= 99999999999){
+        display.innerText = "Overflow";
+        
+
+    }
+
+    else {
+        display.innerText = "0";
+
+
+    }
 
 }
