@@ -45,6 +45,7 @@ function clear() {
     isFirstNum = true;
     firstNum = 0;
     secondNum = 0;
+    operatorButtons.forEach(button => button.disabled = false);
 }
 
 //add Decimal
@@ -114,6 +115,10 @@ function operationDecider(e) {
             logic(firstNum, secondNum, currentOperator);
         break;
 
+        case "per": 
+            currentOperator = "power";
+            changeVars();
+
         default: return;
 
     }
@@ -126,7 +131,7 @@ function operationDecider(e) {
 
 function logic(n1, n2, op) {
     console.log(op);
-    
+    operatorButtons.forEach(button => button.disabled = false);
 
     floatNum1 = parseFloat(n1);
     floatNum2 = parseFloat(n2);
@@ -151,6 +156,10 @@ function logic(n1, n2, op) {
         case 'divide': 
             result = floatNum1 / floatNum2;
         break;
+
+        case 'power':
+            result = floatNum1 ** floatNum2;
+        break;
         
 
     }
@@ -165,6 +174,14 @@ function logic(n1, n2, op) {
 function changeVars() {
     isFirstNum = false;
     display.innerText = "";
+    operatorButtons.forEach(button => {
+        if (button.id != "equals") {
+            button.disabled = true;
+
+        }
+
+
+    });
 }
 
 function update() {
@@ -184,6 +201,8 @@ function update() {
 // round the answer and return it to screen
 
 function round(toBeRounded) {
+    operatorButtons.disabled = false;
+
     firstNum = toBeRounded;
     
     finalResult = Number((toBeRounded).toFixed(9));
